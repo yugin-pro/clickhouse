@@ -2,40 +2,40 @@
 <diagram version="1" name="similarweb.erd">
 	<entities>
 		<data-source id="com_clickhouse-18c8d4cef8b-317a1a04553df7dd">
-			<entity id="1" name="audience_demographics" fq-name="ext_similarweb.audience_demographics" order="0" x="380" y="1060">
+			<entity id="1" name="audience_demographics" fq-name="ext_similarweb.audience_demographics" order="0" x="40" y="60">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="2" name="audience_demographics_data" fq-name="ext_similarweb.audience_demographics_data" order="1" x="380" y="1460">
+			<entity id="2" name="audience_demographics_data" fq-name="ext_similarweb.audience_demographics_data" order="1" x="300" y="40">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="3" name="audience_geography" fq-name="ext_similarweb.audience_geography" order="2" x="20" y="1060">
+			<entity id="3" name="audience_geography" fq-name="ext_similarweb.audience_geography" order="2" x="300" y="460">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="4" name="audience_geography_data" fq-name="ext_similarweb.audience_geography_data" order="3" x="20" y="1460">
+			<entity id="4" name="audience_geography_data" fq-name="ext_similarweb.audience_geography_data" order="3" x="40" y="420">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="5" name="website_performance" fq-name="ext_similarweb.website_performance" order="4" x="20" y="160">
+			<entity id="5" name="website_performance" fq-name="ext_similarweb.website_performance" order="4" x="40" y="840">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="6" name="website_performance_data" fq-name="ext_similarweb.website_performance_data" order="5" x="20" y="520">
+			<entity id="6" name="website_performance_data" fq-name="ext_similarweb.website_performance_data" order="5" x="300" y="800">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="7" name="website_performance_data_endpoint_104360b9d6392a6013ac8a046bbd4dbf" fq-name="ext_similarweb.website_performance_data_endpoint_104360b9d6392a6013ac8a046bbd4dbf" order="6" x="660" y="40">
+			<entity id="7" name="website_performance_data_endpoint_104360b9d6392a6013ac8a046bbd4dbf" fq-name="ext_similarweb.website_performance_data_endpoint_104360b9d6392a6013ac8a046bbd4dbf" order="6" x="600" y="140">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="8" name="website_performance_data_endpoint_12a4d32f4d257caff4a5db29224bff1d" fq-name="ext_similarweb.website_performance_data_endpoint_12a4d32f4d257caff4a5db29224bff1d" order="7" x="360" y="40">
+			<entity id="8" name="website_performance_data_endpoint_12a4d32f4d257caff4a5db29224bff1d" fq-name="ext_similarweb.website_performance_data_endpoint_12a4d32f4d257caff4a5db29224bff1d" order="7" x="600" y="760">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="9" name="website_performance_data_endpoint_47e858a2dca1ace46485463ca1e21872" fq-name="ext_similarweb.website_performance_data_endpoint_47e858a2dca1ace46485463ca1e21872" order="8" x="1000" y="40">
+			<entity id="9" name="website_performance_data_endpoint_47e858a2dca1ace46485463ca1e21872" fq-name="ext_similarweb.website_performance_data_endpoint_47e858a2dca1ace46485463ca1e21872" order="8" x="600" y="1260">
 				<path name="ext_similarweb"/>
 			</entity>
-			<entity id="10" name="audience_demographics" fq-name="raw_similarweb.audience_demographics" order="9" color-bg="204,192,184" x="380" y="960">
+			<entity id="10" name="audience_demographics" fq-name="raw_similarweb.audience_demographics" order="9" color-bg="204,192,184" border-width="3" x="600" y="1960">
 				<path name="raw_similarweb"/>
 			</entity>
-			<entity id="11" name="audience_geography" fq-name="raw_similarweb.audience_geography" order="10" color-bg="204,192,184" x="20" y="960">
+			<entity id="11" name="audience_geography" fq-name="raw_similarweb.audience_geography" order="10" color-bg="204,192,184" x="40" y="1960">
 				<path name="raw_similarweb"/>
 			</entity>
-			<entity id="12" name="website_performance" fq-name="raw_similarweb.website_performance" order="11" color-bg="204,192,184" x="20" y="40">
+			<entity id="12" name="website_performance" fq-name="raw_similarweb.website_performance" order="11" color-bg="204,192,184" x="300" y="1960">
 				<path name="raw_similarweb"/>
 			</entity>
 		</data-source>
