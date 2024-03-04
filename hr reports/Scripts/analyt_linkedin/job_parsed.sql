@@ -1,7 +1,6 @@
---job_dates
+--job_parsed
 
-
-create or replace table analyt_linkedin.job_parsed ENGINE = ReplacingMergeTree(request_ts) ORDER by (id) as
+insert into table analyt_linkedin.job_parsed
 select 
 cast(extract(jobPostingUrn,'(\d+)') as UInt32) id
 ,jobPostingTitle,title,region,company,actionTarget

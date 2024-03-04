@@ -9,7 +9,7 @@ select
 	id,category
 	,created_date
 from analyt_linkedin.job_category
-left join analyt_linkedin.job_dates final using(id) 
+left join (select id , min(created_date) created_date from analyt_linkedin.job_dates final group by id) using(id) 
 )
 left join analyt_linkedin.job_extra final using(id)
 settings joined_subquery_requires_alias=0
