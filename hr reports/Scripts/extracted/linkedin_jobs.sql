@@ -1,6 +1,6 @@
 --extrat threads from row mails
 
---create or replace table extracted.linkedin_jobs ENGINE = MergeTree ORDER by id_chunk_stored as
+--create or replace table extracted.linkedin_jobs ENGINE = ReplacingMergeTree ORDER by trackingId as
 --truncate table extracted.linkedin_jobs
 insert into table extracted.linkedin_jobs
 select * except(included_api_chunk_stored_json)
@@ -15,6 +15,6 @@ select * except(included_api_chunk_stored_json)
 , JSON_VALUE(included_api_chunk_stored_json, '$.footerItems[2].text.text') text_2
 , JSON_VALUE(included_api_chunk_stored_json, '$.logo.actionTarget') actionTarget
 , JSON_VALUE(included_api_chunk_stored_json, '$.title.text') title
-from extracted.linkedin_20240303
+from extracted.linkedin_20240317
 array join included_api_chunk_stored_json
 settings function_json_value_return_type_allow_complex=true;

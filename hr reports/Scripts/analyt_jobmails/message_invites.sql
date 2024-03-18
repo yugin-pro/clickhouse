@@ -1,7 +1,7 @@
 --message_invites
 
 
-create or replace table analyt_jobmails.message_invites ENGINE = ReplacingMergeTree ORDER by id as
+create or replace table analyt_jobmails.message_invites ENGINE = MergeTree ORDER by id as
 select id,
 m1 or m2  is_invitation
 from (

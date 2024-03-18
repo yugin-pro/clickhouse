@@ -1,7 +1,7 @@
 --message_new_applications
 
 
-create or replace table analyt_jobmails.message_new_applications ENGINE = ReplacingMergeTree ORDER by id as
+create or replace table analyt_jobmails.message_new_applications ENGINE = MergeTree ORDER by id as
 select id,
 m1 or m2 or m3 or m4  or m5 or m6  or m7 or m8  is_new
 from (

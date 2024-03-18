@@ -1,7 +1,7 @@
 --message_declined
 
 
-create or replace table analyt_jobmails.message_declined ENGINE = ReplacingMergeTree ORDER by id as
+create or replace table analyt_jobmails.message_declined ENGINE = MergeTree ORDER by id as
 select id,
 m1 or m2 or m3 or m4  or m5 or m6  or m7 is_declined
 from (

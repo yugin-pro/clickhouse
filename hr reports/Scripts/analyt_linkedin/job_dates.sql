@@ -11,3 +11,25 @@ select
 , toMinute(created_ts) created_minutes
 from extracted.linkedin_jobs
 where id is not null and created_ts is not null and recorded_ts is not null
+
+
+--schema
+CREATE TABLE analyt_linkedin.job_dates
+(
+
+    `id` UInt32,
+
+    `created_ts` DateTime,
+
+    `recorded_ts` DateTime,
+
+    `created_date` Date,
+
+    `created_hours` UInt8,
+
+    `created_minutes` UInt8
+)
+ENGINE = ReplacingMergeTree
+ORDER BY (id,
+ recorded_ts)
+SETTINGS index_granularity = 8192;
