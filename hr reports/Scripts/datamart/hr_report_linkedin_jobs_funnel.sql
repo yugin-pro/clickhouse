@@ -9,7 +9,7 @@ select *
 from analyt_linkedin.job_parsed final
 left join (select id , min(created_date) created_date from analyt_linkedin.job_dates final group by id) using(id)
 )
-left join analyt_linkedin.job_extra final using(id)
+left join analyt_linkedin.job_extra using(id)
 ) a
 left join (
 	select '' v_name,'' o_name, * from analyt_jobmails.message_vacancy

@@ -1,6 +1,6 @@
 --extrat threads from row mails
 
-create or replace table extracted.linkedin_20240317 ENGINE = MergeTree ORDER by id_chunk_stored as
+create or replace table extracted.linkedin_20240324 ENGINE = MergeTree ORDER by id_chunk_stored as
 select category,id_chunk_stored
 ,JSON_VALUE(api_chunk_stored_json, '$.request') request
 ,JSON_VALUE(api_chunk_stored_json, '$.ts') request_ts
@@ -20,7 +20,7 @@ select tupleElement(ess, 1) category
 , tupleElement(ess, 2) stored_json
 from(
 select JSONExtractKeysAndValuesRaw(json_result) ess
-from raw_firebase.decodeurl_51e7f_default_rtdb_linkedin_20240317
+from raw_firebase.decodeurl_51e7f_default_rtdb_linkedin_20240324
 ) array
 join ess
 )
