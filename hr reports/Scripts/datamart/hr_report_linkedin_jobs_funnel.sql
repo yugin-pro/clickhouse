@@ -2,19 +2,14 @@
 
 
 create or replace table datamart.hr_report_linkedin_jobs_funnel ENGINE = MergeTree ORDER by id as
-select a.*, b.v_name from (
-select * from (
-select * 
-,concat('https://www.linkedin.com/jobs/view/',toString(id)) job_url
-from analyt_linkedin.job_parsed final
-left join (select id , min(created_date) created_date from analyt_linkedin.job_dates final group by id) using(id)
-)
+select 
+a.id,created_ts,title,company,company_related_name,company_link,job_url,applicants,is_easy_apply,remote,geo
+,toInt16OrZero(extract(applicants,'\d*')) applicant_number
+,length(category_group) category_number
+,recreated_index,recreated_amount,different_job_per_company,is_apropriate
+, b.id is_company_interaction from (
+select *
+from analyt_linkedin.job_parsed a final 
 left join analyt_linkedin.job_extra using(id)
 ) a
-left join (
-	select '' v_name,'' o_name, * from analyt_jobmails.message_vacancy
-	left join analyt_jobmails.message_organisation using(id)
-	where id in (select id from analyt_jobmails.message_new_applications
-	where is_new = 1)	
-) b on company = o_name and jobPostingTitle = v_name
-settings joined_subquery_requires_alias=0
+left join analyt_jobmails.message_organisation b on company_related_name=related_name 

@@ -29,8 +29,10 @@ end as is_viewed
 	else 0
 end as is_declined
 , case 
-	when lower(subject) like '%interview%' then 1
-	when lower(body) like '%interview%' then 1
+	when lower(body) like 'perfect%match%' then 1
+	when lower(body) like 'no%match%' then 1
+	when lower(body) like 'no%proceed%' then 1
+	when lower(body) like 'no%continue%' then 1
 	else 0
 end as is_interview
 from analyt_jobmails.message_parsed
@@ -62,8 +64,10 @@ end as is_viewed
 	else 0
 end as is_declined
 , case 
-	when lower(subject) like '%interview%' then 1
-	when lower(body) like '%interview%' then 1
+	when lower(body) like 'perfect%match%' then 1
+	when lower(body) like 'no%match%' then 1
+	when lower(body) like 'no%proceed%' then 1
+	when lower(body) like 'no%continue%' then 1
 	else 0
 end as is_interview
 from (
