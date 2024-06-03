@@ -2,7 +2,7 @@
 --param create_table : extracted.linkedin_[20240526]
 --param raw_table : raw_firebase.decodeurl_51e7f_default_rtdb_linkedin_[20240526]
 
-create or replace table "{create_table:String}" ENGINE = MergeTree ORDER by id_chunk_stored as
+create or replace table extracted.{create_table:Identifier} ENGINE = MergeTree ORDER by id_chunk_stored as
 select * except(n) from (
 select *
 ,row_number() over (partition by request order by request_ts desc) n
@@ -26,7 +26,7 @@ select tupleElement(ess, 1) category
 , tupleElement(ess, 2) stored_json
 from(
 select JSONExtractKeysAndValuesRaw(json_result) ess
-from "{raw_table:String}"
+from raw_firebase.{raw_table:Identifier}
 ) array
 join ess
 )
