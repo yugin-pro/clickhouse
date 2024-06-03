@@ -1,6 +1,6 @@
 --extrat threads from row mails
 
-create or replace table extracted.linkedin_\\"{raw_table_date: String}\\" ENGINE = MergeTree ORDER by id_chunk_stored as
+create or replace table extracted.linkedin_"{raw_table_date: String}" ENGINE = MergeTree ORDER by id_chunk_stored as
 select * except(n) from (
 select *
 ,row_number() over (partition by request order by request_ts desc) n
