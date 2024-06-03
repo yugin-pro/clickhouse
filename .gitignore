@@ -2,3 +2,4 @@
 !.gitignore
 ab test and statisitic/Scripts/dev.sql
 hr reports/Scripts/dev.sql
+hr reports/Scripts/analyt_jobmails/dev.sql
