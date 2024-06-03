@@ -24,7 +24,7 @@ select tupleElement(ess, 1) category
 , tupleElement(ess, 2) stored_json
 from(
 select JSONExtractKeysAndValuesRaw(json_result) ess
-from raw_firebase.decodeurl_51e7f_default_rtdb_linkedin_\\"{raw_table_date: String}\\"
+from raw_firebase.decodeurl_51e7f_default_rtdb_linkedin_"{raw_table_date: String}"
 ) array
 join ess
 )
